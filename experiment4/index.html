@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- This title is used for tabs and bookmarks -->
+	<title>Experiment 4 - ProcGen/Infinite Worlds</title>
+
+	<!-- Use UTF character set, a good idea with any webpage -->
+	<meta charset="UTF-8" />
+	<!-- Set viewport so page remains consistently scaled w narrow devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Include CSS file, including a site-wide CSS and for this particular page -->
+	<link rel="stylesheet" type="text/css" href="../css/site.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!-- Load jQuery library -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+	<!-- Load p5.js library -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+
+	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
+    <script type="text/javascript" src="../js/site.js" DEFER></script>
+	<!-- Use me for a JavaScript OOP Project -->
+	<script type="text/javascript" src="./js/project.js" DEFER></script>
+	<!-- Use me for a p5.js project -->
+	<!-- <script type="text/javascript" src="./js/sketch.js" DEFER></script> -->
+
+	<script type="text/javascript" src="./js/xxhash.min.js" DEFER></script>
+	<script type="text/javascript" src="./js/engine.js" DEFER></script>
+	<script type="text/javascript" src="./js/my_world.js" DEFER></script>
+</head>
+<body>
+	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
+	<main id="content">
+		<section>
+
+			<h1>Experiment 4 - ProcGen/Infinite Worlds</h1>
+
+			<div class="minor-section">
+				<!-- <div id="canvas-container"> -->
+					<!-- canvas will be added here -->
+
+					  <div id="container"></div>
+					  <div id="lighthouseCount"></div>
+
+					  <!-- <button id="reseedButton2">
+						reseed
+					  </button>
+					  <span id="seedReport2"></span>
+					  <hr />
+					  <span id="canvasContainer2" style="margin: 10px;"></span>
+					  <textarea cols="20" rows="20" id="asciiBox2" style="opacity: 0.5; letter-spacing: 1ex; width: 320px; margin: 10px; font-family: monospace;"></textarea> -->
+<!-- 
+				<a href="index2.html" style="text-decoration: none;">
+					<button id="dungeonGeneratorButton" style="width:100%; height:50px;">SEE ALSO INFINITE OCEAN GENERATOR</button>
+				</a>
+				<a href="index3.html" style="text-decoration: none;">
+					<button id="dungeonGeneratorButton" style="width:100%; height:50px;">SEE ALSO INFINITE SPACE GENERATOR</button>
+				</a> -->
+				<br>
+				<p>Use browser back button to return to home page</p>
+				<!-- </div> -->
+                <div class="fullscreen-box">
+                    <button id="fullscreen">Fullscreen</button>
+                </div>
+			</div>
+
+			<div class="minor-section">
+				<h2>Description</h2>
+				<p>What are you trying to acomplish with this experiment?
+					<br>
+					I want to create an infinite world that needs to be uncovered through exploration and activity.
+					I created this ocean that needs lit up by clicking on the lighthouses. The wave also have glimps
+					of the moonlight.
+				</p>
+			</div>
+
+			<div class="minor-section">
+				<br>
+				<h2>Technical</h2>
+				<p>Describe in detail what you did technically and how it works?
+				<br>
+					I used perlin noise to generate the shallow and deep ocean depths.
+					The lighthouses when lit up shed light on the surrounding area. The light
+					effect is calculated by the distance from the lighthouse and the angle of the tile.
+					When the lighthouse is clicked, the light effect is calculated and the tile is lit up.
+				</p>
+			</div>
+
+			<div class="minor-section">
+				<br>
+				<h2>Reflection</h2>
+				<p>
+					I had the most fun in this experiment than all of the other experiments and I spent a lot of
+					time doing this just for the fun of it. I honestly probably will keep on working on this after this
+					submission. Effort and innovation wise I definitely believe I achieved excellently and put out my
+					earnest effort in doing what I can. In the future something I could be doing better on is to spend
+					more time on the core stuff so I won’t miss out on the requirements for the extra fun stuff.
+					<br>
+				</p>
+			</div>
+
+			<div class="minor-section">
+				<br />
+				<h2>Statement</h2>
+				<p>
+				  <br />
+				  INFINITY<br />
+				  This is an infinite oceans that generates an infinite
+				  number of lighthouses that can be lit up.
+	  
+				  <br />VARIATION IN SPACE<br />
+				  Ocean depths are created with perlin noise.
+	  
+				  <br />VARIATION IN KEY<br />
+				  Different noise generates significantly different terrain to make
+				  entirely new worlds and boat locations and shallow vs deep ocean
+				  transitions.
+	  
+				  <br />SIGNS OF LIFE<br />
+				  The ocean tiles all move up and down slowly using sine and time
+				  progression to simulate waves. You can also click on the lighthouses to light them up.
+	   
+			  </div>
+
+		</section>
+
+		</nav>
+	</main>
+</body>
+</html>
