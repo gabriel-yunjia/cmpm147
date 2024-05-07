@@ -13,6 +13,7 @@ let tile_height_step_main; // A height step is half a tile's height
 let tile_rows, tile_columns;
 let camera_offset;
 let camera_velocity;
+let zoomFactor = 1; // Initial zoom level
 
 /////////////////////////////
 // Transforms between coordinate systems
@@ -37,7 +38,7 @@ function tileRenderingOrder(offset) {
 function screenToWorld([screen_x, screen_y], [camera_x, camera_y]) {
   screen_x -= camera_x;
   screen_y -= camera_y;
-  screen_x /= tile_width_step_main * 2;
+  screen_x /= tile_width_step_main * 5;
   screen_y /= tile_height_step_main * 2;
   screen_y += 0.5;
   return [Math.floor(screen_y + screen_x), Math.floor(screen_y - screen_x)];
@@ -93,8 +94,8 @@ function rebuildWorld(key) {
   }
   tile_width_step_main = window.p3_tileWidth ? window.p3_tileWidth() : 32;
   tile_height_step_main = window.p3_tileHeight ? window.p3_tileHeight() : 14.5;
-  tile_columns = Math.ceil(width / (tile_width_step_main * 2));
-  tile_rows = Math.ceil(height / (tile_height_step_main * 2));
+  tile_columns = Math.ceil(width / (tile_width_step_main * 2)) +1 ;
+  tile_rows = Math.ceil(height / (tile_height_step_main * 2)+2);
 }
 
 function mouseClicked() {
@@ -113,6 +114,7 @@ function draw() {
   // Keyboard controls!
   if (keyIsDown(LEFT_ARROW)) {
     camera_velocity.x -= 1;
+    
   }
   if (keyIsDown(RIGHT_ARROW)) {
     camera_velocity.x += 1;
@@ -207,3 +209,4 @@ function drawTile([world_x, world_y], [camera_x, camera_y]) {
   }
   pop();
 }
+
